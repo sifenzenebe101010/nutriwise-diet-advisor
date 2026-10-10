@@ -24,3 +24,25 @@
   margin-bottom: 10px;
   font-family: "Arial", sans-serif;
 }
+
+/* The area where messages appear */
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* The user's message bubble */
+.user-message {
+  background-color: #cdeaff;
+  color: #24445c;
+  padding: 10px 15px;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 75%;
+  width: fit-content;
+  align-self: flex-end;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
