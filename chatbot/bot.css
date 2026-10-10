@@ -1,48 +1,72 @@
+/* Base Chat Container (Desktop / Maximized) */
 .chat-container {
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 380px;
   height: 500px;
-  width: 300px;
-  background-color: #456837;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  padding: 10px;
-}
-.body {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow-y: auto;
-  padding: 10px;
-  color: #ddf4c2;
-}
-.chat-header {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: "Arial", sans-serif;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out; /* Smooth transition for minimizing/maximizing */
+  z-index: 1000;
 }
 
-/* The area where messages appear */
-.chat-box {
+/* Chat Header */
+.chat-header {
+  background: #44a244;
+  color: white;
+  padding: 15px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Chat Messages Area (Scrollable) */
+.chat-messages {
+  flex: 1;
   padding: 15px;
   overflow-y: auto;
+  background: #f8f9fa;
 }
 
-/* The user's message bubble */
-.user-message {
-  background-color: #cdeaff;
-  color: #24445c;
-  padding: 10px 15px;
-  border-radius: 18px 18px 4px 18px;
-  max-width: 75%;
-  width: fit-content;
-  align-self: flex-end;
-  overflow-wrap: anywhere;
-  margin: 0;
+/* Chat Input Area */
+.chat-input-area {
+  padding: 10px;
+  background: #ffffff;
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  outline: none;
+}
+
+.img1 {
+  position: relative;
+  bottom: 20px;
+  left: 5px;
+  right: 100;
+  width: 5px; /* Adjust size as needed */
+  height: 10px;
+  z-index: 1000;
+  padding: auto;
+}
+/* --- MEDIA QUERY FOR MOBILE / SMALL SCREENS --- */
+@media screen and (max-width: 480px) {
+  .chat-container {
+    width: 100% !important;
+    height: 100% !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    border-radius: 0 !important; /* Full screen on mobile */
+  }
 }
